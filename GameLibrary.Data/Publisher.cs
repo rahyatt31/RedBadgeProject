@@ -18,11 +18,11 @@ namespace GameLibrary.Data
         public virtual Game Game { get; set; }
 
         [Required]
-        public int PublisherName { get; set; }
+        public string PublisherName { get; set; }
         [Required]
-        public int PublisherFounder { get; set; }
+        public string PublisherFounder { get; set; }
         [Required]
-        public int PublisherLocation { get; set; }
+        public string PublisherLocation { get; set; }
         [Required]
         public int PublisherYearEstablished { get; set; }
         [Required]

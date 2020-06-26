@@ -1,17 +1,15 @@
-﻿using System;
+﻿using GameLibrary.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLibrary.Data
+namespace GameLibrary.Model.Game
 {
-    public enum GameAdvisoryRating {E, E10, T, M, A, RP }
-    public enum GameGenre { Action, Adventure, Educational, Fighting, Horror, Platformer, Puzzle, Racing, Rhythm, RPG, Shooter, Simulation, Sports, Stealth, Strategy, Survival }
-    public class Game
+    public class GameDetail
     {
-        [Key]
         public int GameID { get; set; }
 
         [Required]
@@ -30,8 +28,5 @@ namespace GameLibrary.Data
         public DateTime GameReleaseDate { get; set; }
         [Required]
         public decimal GameGameStop { get; set; }
-
-        public ICollection<Console> Consoles { get; set; }                
-        public ICollection<Publisher> Publishers { get; set; }             
     }
 }

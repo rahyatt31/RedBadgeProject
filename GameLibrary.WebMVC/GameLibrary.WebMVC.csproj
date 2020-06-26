@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,6 +257,14 @@
     <ProjectReference Include="..\GameLibrary.Data\GameLibrary.Data.csproj">
       <Project>{99D4DDA4-6FC6-4908-86CB-03CFCB89B35A}</Project>
       <Name>GameLibrary.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameLibrary.Model\GameLibrary.Model.csproj">
+      <Project>{72574753-8bc6-4899-a798-dd44edc84c5b}</Project>
+      <Name>GameLibrary.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameLibrary.Service\GameLibrary.Service.csproj">
+      <Project>{e39a54ed-2b16-440b-9102-3d7d97db5242}</Project>
+      <Name>GameLibrary.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GameLibrary.Model.Game.GameListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GameID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameMultiplayer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameOnline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameGameStop)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameMultiplayer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameOnline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameGameStop)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+</table>
