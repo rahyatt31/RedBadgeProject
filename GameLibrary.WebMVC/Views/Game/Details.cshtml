@@ -1,0 +1,90 @@
+﻿@model GameLibrary.Model.Game.GameDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GameDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GameID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameMultiplayer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameMultiplayer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameOnline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameOnline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameAdvisoryRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameAdvisoryRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameGameStop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameGameStop)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

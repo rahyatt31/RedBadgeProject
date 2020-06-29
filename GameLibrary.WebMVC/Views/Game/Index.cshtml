@@ -19,10 +19,16 @@
             @Html.DisplayNameFor(model => model.GameName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.GameGenre)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.GameMultiplayer)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GameOnline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameAdvisoryRating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GameRating)
@@ -45,10 +51,16 @@
             @Html.DisplayFor(modelItem => item.GameName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.GameGenre)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.GameMultiplayer)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.GameOnline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameAdvisoryRating)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.GameRating)

@@ -57,12 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleService.cs" />
     <Compile Include="GameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameLibrary.Data\GameLibrary.Data.csproj">
-      <Project>{99D4DDA4-6FC6-4908-86CB-03CFCB89B35A}</Project>
+      <Project>{99d4dda4-6fc6-4908-86cb-03cfcb89b35a}</Project>
       <Name>GameLibrary.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameLibrary.Model\GameLibrary.Model.csproj">

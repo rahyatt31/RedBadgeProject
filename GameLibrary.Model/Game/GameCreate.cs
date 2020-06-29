@@ -10,7 +10,7 @@ namespace GameLibrary.Model.Game
 {
     public class GameCreate
     {
-        public int GameID { get; set; }
+        //public int GameID { get; set; }
 
         [Required]
         public string GameName { get; set; }

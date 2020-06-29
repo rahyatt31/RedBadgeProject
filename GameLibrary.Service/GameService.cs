@@ -63,14 +63,14 @@ namespace GameLibrary.Service
             }
         }
 
-        public GameDetail GetGameByID(int gameid)
+        public GameDetail GetGameByID(int gameID)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Games
-                        .Single(e => e.GameID == gameid);
+                        .Single(e => e.GameID == gameID);
                 return
                     new GameDetail
                     {
