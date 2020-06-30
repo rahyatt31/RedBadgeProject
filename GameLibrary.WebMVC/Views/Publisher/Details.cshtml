@@ -1,0 +1,66 @@
+﻿@model GameLibrary.Model.Publisher.PublisherDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PublisherDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherFounder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherFounder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherYearEstablished)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherYearEstablished)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherMostPopularGame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherMostPopularGame)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

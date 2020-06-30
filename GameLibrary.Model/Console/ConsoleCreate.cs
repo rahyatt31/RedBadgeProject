@@ -10,8 +10,6 @@ namespace GameLibrary.Model.Console
 {
     public class ConsoleCreate
     {
-        public int ConsoleID { get; set; }
-
         [Required, DisplayName("Console Name")]
         public string ConsoleName { get; set; }
 

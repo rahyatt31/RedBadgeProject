@@ -72,6 +72,10 @@
     <Compile Include="Migrations\202006261823468_June26.designer.cs">
       <DependentUpon>202006261823468_June26.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006301403011_June30thFixedForeignKeys.cs" />
+    <Compile Include="Migrations\202006301403011_June30thFixedForeignKeys.designer.cs">
+      <DependentUpon>202006301403011_June30thFixedForeignKeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publisher.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006261823468_June26.resx">
       <DependentUpon>202006261823468_June26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006301403011_June30thFixedForeignKeys.resx">
+      <DependentUpon>202006301403011_June30thFixedForeignKeys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

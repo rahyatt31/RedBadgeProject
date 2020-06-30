@@ -61,6 +61,20 @@ namespace GameLibrary.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateConsoleService();
+            var detail = service.GetConsoleByID(id);
+            var model =
+                new ConsoleEdit
+                {
+                    ConsoleID = detail.ConsoleID,
+                    ConsoleName = detail.ConsoleName,
+                    ConsoleCost = detail.ConsoleCost,
+                };
+            return View(model);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ConsoleEdit model)
@@ -97,7 +111,7 @@ namespace GameLibrary.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteConsole(int id)
         {
             var service = CreateConsoleService();
 

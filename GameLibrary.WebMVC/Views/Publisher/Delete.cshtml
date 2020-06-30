@@ -1,0 +1,72 @@
+﻿@model GameLibrary.Model.Publisher.PublisherListItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PublisherListItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherFounder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherFounder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherYearEstablished)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherYearEstablished)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherMostPopularGame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublisherMostPopularGame)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

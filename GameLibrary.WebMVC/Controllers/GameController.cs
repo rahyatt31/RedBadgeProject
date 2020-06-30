@@ -61,6 +61,26 @@ namespace GameLibrary.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateGameService();
+            var detail = service.GetGameByID(id);
+            var model =
+                new GameEdit
+                {
+                    GameID = detail.GameID,
+                    GameName = detail.GameName,
+                    GameGenre = detail.GameGenre,
+                    GameMultiplayer = detail.GameMultiplayer,
+                    GameOnline = detail.GameOnline,
+                    GameAdvisoryRating = detail.GameAdvisoryRating,
+                    GameRating = detail.GameRating,
+                    GameReleaseDate = detail.GameReleaseDate,
+                    GameGameStop = detail.GameGameStop
+                };
+            return View(model);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, GameEdit model)

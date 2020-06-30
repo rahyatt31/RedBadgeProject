@@ -13,19 +13,21 @@ namespace GameLibrary.Data
         [Key]
         public int PublisherID { get; set; }
 
-        [ForeignKey("Game")]
-        public int GameID { get; set; }
-        public virtual Game Game { get; set; }
-
         [Required]
         public string PublisherName { get; set; }
+        
         [Required]
         public string PublisherFounder { get; set; }
+        
         [Required]
         public string PublisherLocation { get; set; }
+        
         [Required]
         public int PublisherYearEstablished { get; set; }
+        
         [Required]
         public int PublisherMostPopularGame { get; set; }
+
+        public ICollection<Game> Games { get; set; }
     }
 }
