@@ -36,7 +36,7 @@ namespace GameLibrary.Model.Game
         [DisplayName("Published by?")]
         public int PublisherID { get; set; }
 
-        [DisplayName("Year released?")]
+        [DisplayName("Release Date?")]
         public DateTime GameReleaseDate { get; set; }
 
         [DisplayName("GameStop will pay")]

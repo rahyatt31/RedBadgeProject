@@ -26,8 +26,10 @@ namespace GameLibrary.Service
                     GameOnline = model.GameOnline,
                     GameAdvisoryRating = model.GameAdvisoryRating,
                     GameRating = model.GameRating,
+                    ConsoleID = model.ConsoleID,
+                    PublisherID = model.PublisherID,
                     GameReleaseDate = model.GameReleaseDate,
-                    //GameGameStop = model.GameGameStop
+                    GameGameStop = model.GameGameStop // I want to set up a random number to be given instead of user input
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -56,6 +58,8 @@ namespace GameLibrary.Service
                                     GameAdvisoryRating = e.GameAdvisoryRating,
                                     GameRating = e.GameRating,
                                     GameReleaseDate = e.GameReleaseDate,
+                                    ConsoleID = e.ConsoleID,
+                                    PublisherID = e.PublisherID,
                                     GameGameStop = e.GameGameStop
                                 }
                         );
@@ -81,6 +85,8 @@ namespace GameLibrary.Service
                         GameOnline = entity.GameOnline,
                         GameAdvisoryRating = entity.GameAdvisoryRating,
                         GameRating = entity.GameRating,
+                        ConsoleID = entity.ConsoleID,
+                        PublisherID = entity.PublisherID,
                         GameReleaseDate = entity.GameReleaseDate,
                         GameGameStop = entity.GameGameStop
                     };
@@ -103,6 +109,8 @@ namespace GameLibrary.Service
                 entity.GameAdvisoryRating = model.GameAdvisoryRating;
                 entity.GameRating = model.GameRating;
                 entity.GameReleaseDate = model.GameReleaseDate;
+                entity.ConsoleID = model.ConsoleID;
+                entity.PublisherID = model.PublisherID;
                 entity.GameGameStop = model.GameGameStop;
 
                 return ctx.SaveChanges() == 1;

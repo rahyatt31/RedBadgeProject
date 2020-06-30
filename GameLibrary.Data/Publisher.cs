@@ -26,7 +26,7 @@ namespace GameLibrary.Data
         public int PublisherYearEstablished { get; set; }
         
         [Required]
-        public int PublisherMostPopularGame { get; set; }
+        public string PublisherMostPopularGame { get; set; }
 
         public ICollection<Game> Games { get; set; }
     }

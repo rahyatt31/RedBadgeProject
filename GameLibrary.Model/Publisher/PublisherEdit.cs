@@ -24,7 +24,6 @@ namespace GameLibrary.Model.Publisher
         public int PublisherYearEstablished { get; set; }
 
         [DisplayName("Publisher's most popular game")]
-        public int PublisherMostPopularGame { get; set; }
+        public string PublisherMostPopularGame { get; set; }
     }
-}
 }
