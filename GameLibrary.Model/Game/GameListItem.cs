@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,10 +37,14 @@ namespace GameLibrary.Model.Game
         [DisplayName("Published by?")]
         public int PublisherID { get; set; }
 
+        [DataType(DataType.Date)]
         [DisplayName("Release Date?")]
         public DateTime GameReleaseDate { get; set; }
 
         [DisplayName("GameStop will pay")]
         public decimal GameGameStop { get; set; }
+
+        public string ConsoleName { get; set; }
+        public string PublisherName { get; set; }
     }
 }

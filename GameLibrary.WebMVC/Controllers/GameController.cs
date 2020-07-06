@@ -75,6 +75,8 @@ namespace GameLibrary.WebMVC.Controllers
                     GameOnline = detail.GameOnline,
                     GameAdvisoryRating = detail.GameAdvisoryRating,
                     GameRating = detail.GameRating,
+                    ConsoleID = detail.ConsoleID,
+                    PublisherID = detail.PublisherID,
                     GameReleaseDate = detail.GameReleaseDate,
                     GameGameStop = detail.GameGameStop
                 };

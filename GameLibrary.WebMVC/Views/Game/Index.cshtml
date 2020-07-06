@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Game Library</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -48,7 +48,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.GameID)
@@ -72,10 +73,10 @@
             @Html.DisplayFor(modelItem => item.GameRating)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ConsoleID)
+            @Html.DisplayFor(modelItem => item.ConsoleName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PublisherID)
+            @Html.DisplayFor(modelItem => item.PublisherName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.GameReleaseDate)

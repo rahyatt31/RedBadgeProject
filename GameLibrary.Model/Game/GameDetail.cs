@@ -37,6 +37,7 @@ namespace GameLibrary.Model.Game
         [DisplayName("Published by?")]
         public int PublisherID { get; set; }
 
+        [DataType(DataType.Date)]
         [DisplayName("Release Date?")]
         public DateTime GameReleaseDate { get; set; }
 

@@ -58,8 +58,8 @@ namespace GameLibrary.Service
                                     GameAdvisoryRating = e.GameAdvisoryRating,
                                     GameRating = e.GameRating,
                                     GameReleaseDate = e.GameReleaseDate,
-                                    ConsoleID = e.ConsoleID,
-                                    PublisherID = e.PublisherID,
+                                    ConsoleName = e.Console.ConsoleName, // Setting this up like this allowed me to view the name of Console instead of just the IDnumber
+                                    PublisherName = e.Publisher.PublisherName, // Also had to add properties to my GameListItemModel for this to work
                                     GameGameStop = e.GameGameStop
                                 }
                         );
