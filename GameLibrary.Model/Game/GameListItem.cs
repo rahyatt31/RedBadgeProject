@@ -41,6 +41,7 @@ namespace GameLibrary.Model.Game
         [DisplayName("Release Date?")]
         public DateTime GameReleaseDate { get; set; }
 
+        [DataType(DataType.Currency)]
         [DisplayName("GameStop will pay")]
         public decimal GameGameStop { get; set; }
 

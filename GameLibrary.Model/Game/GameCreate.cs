@@ -27,6 +27,7 @@ namespace GameLibrary.Model.Game
         [Required, DisplayName("Advisory Rating")]
         public GameAdvisoryRating GameAdvisoryRating { get; set; }
         
+        [Range (0,5, ErrorMessage = "Rating is on a scale rating between 0-5")]
         [Required, DisplayName("Rating")]
         public int GameRating { get; set; }
 
