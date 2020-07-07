@@ -18,11 +18,6 @@ namespace GameLibrary.Service
 
         public bool CreateGame(GameCreate model)
         {
-            Game game = new Game();
-            {
-               // GameGameStop = GameStopRandomizedCost();
-            }
-
             var entity = new Game()
             {
                 GameName = model.GameName,
@@ -90,8 +85,8 @@ namespace GameLibrary.Service
                         GameOnline = entity.GameOnline,
                         GameAdvisoryRating = entity.GameAdvisoryRating,
                         GameRating = entity.GameRating,
-                        ConsoleID = entity.ConsoleID,
-                        PublisherID = entity.PublisherID,
+                        ConsoleName = entity.Console.ConsoleName,
+                        PublisherName = entity.Publisher.PublisherName,
                         GameReleaseDate = entity.GameReleaseDate,
                         GameGameStop = entity.GameGameStop
                     };

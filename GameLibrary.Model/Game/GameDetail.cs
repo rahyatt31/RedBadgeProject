@@ -43,5 +43,8 @@ namespace GameLibrary.Model.Game
 
         [DisplayName("GameStop will pay")]
         public decimal GameGameStop { get; set; }
+
+        public string ConsoleName { get; set; }
+        public string PublisherName { get; set; }
     }
 }
