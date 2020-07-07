@@ -41,7 +41,7 @@ namespace GameLibrary.Model.Game
         [Required, DisplayName("Release Date?")]
         public DateTime GameReleaseDate { get; set; }
         
-        [DisplayName("GameStop will pay")]
-        public decimal GameGameStop { get; set; }
+        //[DisplayName("GameStop will pay")]
+        //public decimal GameGameStop { get; set; }
     }
 }

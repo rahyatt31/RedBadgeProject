@@ -18,19 +18,24 @@ namespace GameLibrary.Service
 
         public bool CreateGame(GameCreate model)
         {
+            Game game = new Game();
+            {
+               // GameGameStop = GameStopRandomizedCost();
+            }
+
             var entity = new Game()
-                {
-                    GameName = model.GameName,
-                    GameGenre = model.GameGenre,
-                    GameMultiplayer = model.GameMultiplayer,
-                    GameOnline = model.GameOnline,
-                    GameAdvisoryRating = model.GameAdvisoryRating,
-                    GameRating = model.GameRating,
-                    ConsoleID = model.ConsoleID,
-                    PublisherID = model.PublisherID,
-                    GameReleaseDate = model.GameReleaseDate,
-                    GameGameStop = model.GameGameStop // I want to set up a random number to be given instead of user input
-                };
+            {
+                GameName = model.GameName,
+                GameGenre = model.GameGenre,
+                GameMultiplayer = model.GameMultiplayer,
+                GameOnline = model.GameOnline,
+                GameAdvisoryRating = model.GameAdvisoryRating,
+                GameRating = model.GameRating,
+                ConsoleID = model.ConsoleID,
+                PublisherID = model.PublisherID,
+                GameReleaseDate = model.GameReleaseDate,
+                GameGameStop = GameStopRandomizedCost() // I want to set up a random number to be given instead of user input
+            };
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -130,6 +135,13 @@ namespace GameLibrary.Service
 
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+        public decimal GameStopRandomizedCost()
+        {
+            Random number = new Random();
+            decimal gameStop = number.Next(0, 300);
+            return (gameStop/100);
         }
     }
 }

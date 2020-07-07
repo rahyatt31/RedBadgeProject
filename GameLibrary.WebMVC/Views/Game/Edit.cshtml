@@ -45,6 +45,14 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(model => model.GameAdvisoryRating, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.GameAdvisoryRating, "Select")
+            @Html.ValidationMessageFor(model => model.GameAdvisoryRating, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(model => model.GameRating, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.GameRating, new { htmlAttributes = new { @class = "form-control" } })
