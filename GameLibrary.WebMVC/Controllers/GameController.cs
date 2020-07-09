@@ -12,15 +12,25 @@ namespace GameLibrary.WebMVC.Controllers
     public class GameController : Controller
     {
         // GET: Game
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
+            ViewBag.GameIDSortParm = String.IsNullOrEmpty(sortOrder) ? "gameID_desc" : "";
+            ViewBag.GameNameSortParm = sortOrder == "gameName" ? "gameName_desc" : "gameName";
+            ViewBag.GameGenreSortParm = sortOrder == "gameGenre" ? "gameGenre_desc" : "gameGenre";
+            ViewBag.GameAdvisoryRatingSortParm = sortOrder == "gameAdvisoryRating" ? "gameAdvisoryRating_desc" : "gameAdvisoryRating";
+            ViewBag.GameRatingSortParm = sortOrder == "gameRating" ? "gameRating_desc" : "gameRating";
+            ViewBag.ConsoleIDSortParm = sortOrder == "consoleID" ? "consoleID_desc" : "consoleID";
+            ViewBag.PublisherIDSortParm = sortOrder == "publisherID" ? "publisherID_desc" : "publisherID";
+            ViewBag.GameReleaseDateSortParm = sortOrder == "gameReleaseDate" ? "gameReleaseDate_desc" : "gameReleaseDate";
+            ViewBag.GameGameStopSortParm = sortOrder == "gameGameStop" ? "gameGameStop_desc" : "gameGameStop";
+
             GameService service = CreateGameService();
-            var model = service.GetGames();
+            var model = service.SortGames(sortOrder, searchString);
 
             return View(model);
         }
 
-        private GameService CreateGameService()
+        public GameService CreateGameService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new GameService(userId);

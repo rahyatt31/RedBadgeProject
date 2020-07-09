@@ -10,85 +10,130 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.GameID)
+            @Html.ActionLink("ID", "Index", new { sortOrder = ViewBag.GameIDSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameName)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.GameNameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameGenre)
+            @Html.ActionLink("Genre", "Index", new { sortOrder = ViewBag.GameGenreSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameMultiplayer)
+            Online?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameOnline)
+            Muliplayer?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameAdvisoryRating)
+            @Html.ActionLink("Advisory Rating", "Index", new { sortOrder = ViewBag.GameAdvisoryRatingSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameRating)
+            @Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.GameRatingSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ConsoleID)
+            @Html.ActionLink("Consoles", "Index", new { sortOrder = ViewBag.ConsoleIDSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherID)
+            @Html.ActionLink("Publisher", "Index", new { sortOrder = ViewBag.PublisherIDSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameReleaseDate)
+            @Html.ActionLink("Release Date", "Index", new { sortOrder = ViewBag.GameReleaseDateSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GameGameStop)
+            @Html.ActionLink("GameStop will pay you...", "Index", new { sortOrder = ViewBag.GameGameStopSortParm })
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameGenre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameMultiplayer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameOnline)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameAdvisoryRating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameRating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConsoleName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameReleaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameGameStop)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) @*Uncommenting these sends them to the exact Game you want to EDIT or VIEW, instead of to an error page without the ID at the end of the URL*@
-            @Html.ActionLink("Details", "Details", new { id = item.GameID })
-            @Html.ActionLink("Delete", "Delete", new { id=item.GameID })
-        </td>
-    </tr>
-}
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GameID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameGenre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameMultiplayer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameOnline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameAdvisoryRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsoleID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublisherID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameGameStop)
+            </th>
+            <th></th>
+        </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameGenre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameMultiplayer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameOnline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameAdvisoryRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameGameStop)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) @*Uncommenting these sends them to the exact Game you want to EDIT or VIEW, instead of to an error page without the ID at the end of the URL*@
+                @Html.ActionLink("Details", "Details", new { id = item.GameID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.GameID })
+            </td>
+        </tr>
+    }
 </table>
