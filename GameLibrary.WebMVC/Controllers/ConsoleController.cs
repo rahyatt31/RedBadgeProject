@@ -12,10 +12,14 @@ namespace GameLibrary.WebMVC.Controllers
     public class ConsoleController : Controller
     {
         // GET: Console
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
+            ViewBag.ConsoleIDSortParm = String.IsNullOrEmpty(sortOrder) ? "consoleID_desc" : "";
+            ViewBag.ConsoleNameSortParm = sortOrder == "consoleName" ? "consoleName_desc" : "consoleName";
+            ViewBag.ConsoleCostSortParm = sortOrder == "consoleCost" ? "consoleCost_desc" : "consoleCost";
+
             ConsoleService service = CreateConsoleService();
-            var model = service.GetConsole();
+            var model = service.SortConsoles(sortOrder, searchString);
 
             return View(model);
         }

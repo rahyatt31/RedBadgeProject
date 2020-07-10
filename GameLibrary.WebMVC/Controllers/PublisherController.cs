@@ -12,10 +12,17 @@ namespace GameLibrary.WebMVC.Controllers
     public class PublisherController : Controller
     {
         // GET: Publisher
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
+            ViewBag.PublisherIDSortParm = String.IsNullOrEmpty(sortOrder) ? "publisherID_desc" : "";
+            ViewBag.PublisherNameSortParm = sortOrder == "publisherName" ? "publisherName_desc" : "publisherName";
+            ViewBag.PublisherFounderSortParm = sortOrder == "publisherFounder" ? "publisherFounder_desc" : "publisherFounder";
+            ViewBag.PublisherLocationSortParm = sortOrder == "publisherLocation" ? "publisherLocation_desc" : "publisherLocation";
+            ViewBag.PublisherYearEstablishedSortParm = sortOrder == "publisherYearEstablished" ? "publisherYearEstablished_desc" : "publisherYearEstablished";
+            ViewBag.PublisherMostPopularGameSortParm = sortOrder == "publisherMostPopularGame" ? "publisherMostPopularGame_desc" : "publisherMostPopularGame";
+
             PublisherService service = CreatePublisherService();
-            var model = service.GetPublisher();
+            var model = service.SortPublishers(sortOrder, searchString);
 
             return View(model);
         }

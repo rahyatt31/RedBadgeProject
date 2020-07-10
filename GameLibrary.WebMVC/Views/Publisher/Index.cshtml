@@ -4,60 +4,69 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Publishers</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherID)
+            @Html.ActionLink("ID", "Index", new { sortOrder = ViewBag.PublisherIDSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherName)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.PublisherNameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherFounder)
+            @Html.ActionLink("Founder", "Index", new { sortOrder = ViewBag.PublisherFounderSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherLocation)
+            @Html.ActionLink("Located", "Index", new { sortOrder = ViewBag.PublisherLocationSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherYearEstablished)
+            @Html.ActionLink("Year Established", "Index", new { sortOrder = ViewBag.PublisherYearEstablishedSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherMostPopularGame)
+            @Html.ActionLink("Most Popular Game", "Index", new { sortOrder = ViewBag.PublisherMostPopularGameSortParm })
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherFounder)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherLocation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherYearEstablished)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublisherMostPopularGame)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PublisherID })
-            @Html.ActionLink("Details", "Details", new { id = item.PublisherID })
-            @Html.ActionLink("Delete", "Delete", new { id=item.PublisherID})
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherFounder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherYearEstablished)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublisherMostPopularGame)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PublisherID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PublisherID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PublisherID })
+            </td>
+        </tr>
+    }
 </table>

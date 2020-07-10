@@ -100,5 +100,51 @@ namespace GameLibrary.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<ConsoleListItem> SortConsoles(string sortOrder, string searchString)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var consoles = from s in ctx.Consoles                         
+                            select s;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    consoles = consoles.Where(s => s.ConsoleName.Contains(searchString));
+                }
+
+                switch (sortOrder)
+                {
+                    case "consoleID_desc":
+                        consoles = consoles.OrderByDescending(s => s.ConsoleID);
+                        break;
+                    case "consoleName":
+                        consoles = consoles.OrderBy(s => s.ConsoleName);
+                        break;
+                    case "consoleName_desc":
+                        consoles = consoles.OrderByDescending(s => s.ConsoleName);
+                        break;
+                    case "consoleCost":
+                        consoles = consoles.OrderBy(s => s.ConsoleCost);
+                        break;
+                    case "consoleCost_desc":
+                        consoles = consoles.OrderByDescending(s => s.ConsoleCost);
+                        break;
+                    default:
+                        consoles = consoles.OrderBy(s => s.ConsoleID);
+                        break;
+                }
+
+                return (consoles.Select(
+                            e =>
+                                new ConsoleListItem
+                                {
+                                    ConsoleID = e.ConsoleID,
+                                    ConsoleName = e.ConsoleName,
+                                    ConsoleCost = e.ConsoleCost,
+                                }
+                        ).ToList());
+            }
+        }
     }
 }

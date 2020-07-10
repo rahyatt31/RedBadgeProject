@@ -50,7 +50,7 @@ namespace GameLibrary.Service
                                     PublisherFounder = e.PublisherFounder,
                                     PublisherLocation = e.PublisherLocation,
                                     PublisherYearEstablished = e.PublisherYearEstablished,
-                                    PublisherMostPopularGame = e.PublisherMostPopularGame,
+                                    PublisherMostPopularGame = e.PublisherMostPopularGame
                                 }
                         );
                 return query.ToArray();
@@ -111,5 +111,73 @@ namespace GameLibrary.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<PublisherListItem> SortPublishers(string sortOrder, string searchString)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var publishers = from s in ctx.Publishers
+                               select s;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    publishers = publishers.Where(s => s.PublisherName.Contains(searchString));
+                }
+
+                switch (sortOrder)
+                {
+                    case "publisherID_desc":
+                        publishers = publishers.OrderByDescending(s => s.PublisherID);
+                        break;
+                    case "publisherName":
+                        publishers = publishers.OrderBy(s => s.PublisherName);
+                        break;
+                    case "publisherName_desc":
+                        publishers = publishers.OrderByDescending(s => s.PublisherName);
+                        break;
+                    case "publisherFounder":
+                        publishers = publishers.OrderBy(s => s.PublisherFounder);
+                        break;
+                    case "publisherFounder_desc":
+                        publishers = publishers.OrderByDescending(s => s.PublisherFounder);
+                        break;
+                    case "publisherLocation":
+                        publishers = publishers.OrderBy(s => s.PublisherLocation);
+                        break;
+                    case "publisherLocation_desc":
+                        publishers = publishers.OrderByDescending(s => s.PublisherLocation);
+                        break;
+                    case "publisherYearEstablished":
+                        publishers = publishers.OrderBy(s => s.PublisherYearEstablished);
+                        break;
+                    case "publisherYearEstablished_desc":
+                        publishers = publishers.OrderByDescending(s => s.PublisherYearEstablished);
+                        break;
+                    case "publisherMostPopularGame":
+                        publishers = publishers.OrderBy(s => s.PublisherMostPopularGame);
+                        break;
+                    case "publisherMostPopularGame_desc":
+                        publishers = publishers.OrderByDescending(s => s.PublisherMostPopularGame);
+                        break;
+                    default:
+                        publishers = publishers.OrderBy(s => s.PublisherID);
+                        break;
+                }
+
+                return (publishers.Select(
+                            e =>
+                                new PublisherListItem
+                                {
+                                    PublisherID = e.PublisherID,
+                                    PublisherName = e.PublisherName,
+                                    PublisherFounder = e.PublisherFounder,
+                                    PublisherLocation = e.PublisherLocation,
+                                    PublisherYearEstablished = e.PublisherYearEstablished,
+                                    PublisherMostPopularGame = e.PublisherMostPopularGame
+                                }
+                        ).ToList());
+            }
+        }
+
     }
 }

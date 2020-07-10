@@ -130,8 +130,8 @@
                 @Html.DisplayFor(modelItem => item.GameGameStop)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) @*Uncommenting these sends them to the exact Game you want to EDIT or VIEW, instead of to an error page without the ID at the end of the URL*@
-                @Html.ActionLink("Details", "Details", new { id = item.GameID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) | @*Uncommenting these sends them to the exact Game you want to EDIT or VIEW, instead of to an error page without the ID at the end of the URL*@
+                @Html.ActionLink("Details", "Details", new { id = item.GameID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.GameID })
             </td>
         </tr>

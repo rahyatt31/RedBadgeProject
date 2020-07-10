@@ -4,42 +4,50 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Consoles / Platforms</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ConsoleID)
+            @Html.ActionLink("ID", "Index", new { sortOrder = ViewBag.ConsoleIDSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ConsoleName)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.ConsoleNameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ConsoleCost)
+            @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.ConsoleCostSortParm })
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConsoleID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConsoleName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConsoleCost)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ConsoleID })
-            @Html.ActionLink("Details", "Details", new { id=item.ConsoleID })
-            @Html.ActionLink("Delete", "Delete", new { id=item.ConsoleID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsoleID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsoleCost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ConsoleID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ConsoleID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ConsoleID })
+            </td>
+        </tr>
+    }
 </table>
