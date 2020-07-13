@@ -1,4 +1,5 @@
 ﻿using GameLibrary.Data;
+using GameLibrary.Model.Console;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,15 +34,12 @@ namespace GameLibrary.Model.Game
 
         [DisplayName("Available on which Consoles?")]
         public int ConsoleID { get; set; }
-        
+
         [DisplayName("Published by?")]
         public int PublisherID { get; set; }
 
         [DataType(DataType.Date)]
         [Required, DisplayName("Release Date?")]
         public DateTime GameReleaseDate { get; set; }
-        
-        //[DisplayName("GameStop will pay")]
-        //public decimal GameGameStop { get; set; }
     }
 }
