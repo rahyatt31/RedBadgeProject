@@ -144,12 +144,14 @@ namespace GameLibrary.Service
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var games = from s in ctx.Games                          // Similar to line 124
+                var games = from s in ctx.Games                          // Similar to line 123
                             select s;
 
                 if (!String.IsNullOrEmpty(searchString))
                 {
-                    games = games.Where(s => s.GameName.Contains(searchString));
+                    games = games.Where(s => s.GameName.Contains(searchString)
+                    || s.Console.ConsoleName.Contains(searchString)
+                    || s.Publisher.PublisherName.Contains(searchString));
                 }
 
                 switch (sortOrder)
