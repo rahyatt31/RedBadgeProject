@@ -121,7 +121,8 @@ namespace GameLibrary.Service
 
                 if (!String.IsNullOrEmpty(searchString))
                 {
-                    publishers = publishers.Where(s => s.PublisherName.Contains(searchString));
+                    publishers = publishers.Where(s => s.PublisherName.Contains(searchString)
+                                                    || s.PublisherLocation.Contains(searchString));
                 }
 
                 switch (sortOrder)

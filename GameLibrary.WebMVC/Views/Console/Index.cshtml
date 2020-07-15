@@ -4,50 +4,54 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Consoles / Platforms</h2>
+<body style="background-color: silver">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
-@using (Html.BeginForm())
-{
+    <h1><b>Consoles / Platforms</b></h1>
+
     <p>
-        Find by Console Name: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        <b>@Html.ActionLink("Create New", "Create")</b>
     </p>
-}
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("ID", "Index", new { sortOrder = ViewBag.ConsoleIDSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.ConsoleNameSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.ConsoleCostSortParm })
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
+    @using (Html.BeginForm())
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConsoleID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConsoleName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConsoleCost)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ConsoleID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ConsoleID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ConsoleID })
-            </td>
-        </tr>
+        <p>
+            <b>Search by Name:</b> @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
     }
-</table>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("ID", "Index", new { sortOrder = ViewBag.ConsoleIDSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.ConsoleNameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.ConsoleCostSortParm })
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.ConsoleID)</b>
+                </td>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.ConsoleName)</b>
+                </td>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.ConsoleCost)</b>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ConsoleID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ConsoleID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ConsoleID })
+                </td>
+            </tr>
+        }
+    </table>
+</body>

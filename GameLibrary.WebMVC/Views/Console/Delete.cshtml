@@ -4,44 +4,49 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<body style="background-color: silver">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleID)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleID)
-        </dd>
+    <h1><b>Delete</b></h1>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleName)
-        </dt>
+    <h3><b>Are you sure you want to delete this?</b></h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ConsoleID)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ConsoleID)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleCost)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ConsoleName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleCost)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ConsoleName)
+            </dd>
 
-    </dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.ConsoleCost)
+            </dt>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            <dd>
+                @Html.DisplayFor(model => model.ConsoleCost)
+            </dd>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @Html.ActionLink("Back to List", "Index") |
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        }
+    </div>
+</body>

@@ -4,38 +4,42 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Console Details</h2>
+<body style="background-color: silver">
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleID)
-        </dt>
+    <h1><b>Console Details</b></h1>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleID)
-        </dd>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ConsoleID)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ConsoleID)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ConsoleName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleCost)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ConsoleName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleCost)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ConsoleCost)
+            </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ConsoleID})
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dd>
+                @Html.DisplayFor(model => model.ConsoleCost)
+            </dd>
+
+        </dl>
+    </div>
+</body>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ConsoleID })
+        @Html.ActionLink("Back to List", "Index")
+    </p>

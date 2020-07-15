@@ -4,102 +4,112 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Game Details</h2>
+<style>
+    dd {font-weight:bold}
+    dt {font-size:medium}
+</style>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.GameID)
-        </dt>
+    <body style="background-color: burlywood">
 
-        <dd>
-            @Html.DisplayFor(model => model.GameID)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameName)
-        </dt>
+        <h1><b>Game Details</b></h1>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameName)
-        </dd>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameID)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameGenre)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameID)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameGenre)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameName)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameMultiplayer)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameMultiplayer)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameGenre)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameOnline)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameGenre)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameOnline)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameMultiplayer)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameAdvisoryRating)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameMultiplayer)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameAdvisoryRating)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameOnline)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameRating)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameOnline)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameRating)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameAdvisoryRating)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ConsoleID)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameAdvisoryRating)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConsoleName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameRating)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherID)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameRating)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ConsoleID)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameReleaseDate)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ConsoleName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameReleaseDate)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PublisherID)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GameGameStop)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PublisherName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GameGameStop)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameReleaseDate)
+                </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GameID}) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dd>
+                    @Html.DisplayFor(model => model.GameReleaseDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameGameStop)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GameGameStop)
+                </dd>
+
+            </dl>
+        </div>
+    </body>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.GameID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>

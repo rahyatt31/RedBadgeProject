@@ -4,62 +4,66 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Publisher Details</h2>
+<body style="background-color: powderblue">
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherID)
-        </dt>
+    <h1><b>Publisher Details</b></h1>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherID)
-        </dd>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PublisherID)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PublisherID)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PublisherName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherFounder)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PublisherName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherFounder)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PublisherFounder)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherLocation)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PublisherFounder)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherLocation)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PublisherLocation)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherYearEstablished)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PublisherLocation)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherYearEstablished)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PublisherYearEstablished)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublisherMostPopularGame)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PublisherYearEstablished)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublisherMostPopularGame)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PublisherMostPopularGame)
+            </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PublisherID })
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dd>
+                @Html.DisplayFor(model => model.PublisherMostPopularGame)
+            </dd>
+
+        </dl>
+    </div>
+</body>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PublisherID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
